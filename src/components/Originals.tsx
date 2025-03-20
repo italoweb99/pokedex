@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Originals.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const Original = ({onClose}) => {
   const [pokemons, setPokemons] = useState<{ id: number; name: string; sprites: string}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -66,8 +67,8 @@ const handlePrevious = () => {
           ))}
         </div>
         <div className="buttons">
-          <button onClick={handlePrevious}>Previous</button>
-          <button onClick={handleNext}>Next</button>
+        <FaChevronLeft onClick={handlePrevious} size={26}/>
+          <FaChevronRight onClick={handleNext} size={26}/>
         </div>
         </>
       )}
