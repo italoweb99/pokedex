@@ -28,7 +28,7 @@ useEffect(() => {
     const fetchPokemons = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${offset}`);
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${offset}`);
             const json = await response.json();
             const urls = json.results.map((pokemon: { url: string }) => pokemon.url);
             await loadPokemons(urls);
@@ -51,7 +51,7 @@ const handlePrevious = () => {
 };
 
   return (
-    <div>
+    <div className="conteiner">
       {isLoading ? (
         <h2>Loading...</h2> 
       ) : (
@@ -60,9 +60,8 @@ const handlePrevious = () => {
           {pokemons.map((pokemon) => (
             <div key={pokemon.id} onClick={() => onClose(pokemon.name)}>
                 <img src={pokemon.sprites} alt={pokemon.name} />
-                <h1>N° {pokemon.id}</h1>
-              <h1>{pokemon.name}</h1>
-              
+               
+                <p>{`N° ${pokemon.id} ${pokemon.name}`}</p>
             </div>
           ))}
         </div>

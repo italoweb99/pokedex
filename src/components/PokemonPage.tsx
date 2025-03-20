@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-
+import './PokemonPage.css'
 const PokemonPage = ({id}) => {
     const [pokeData,setPokeData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [types,setTypes] = useState<{tipo: string; id: number; sprite: string}[]>([]);
+    const [search,setSearch] = useState(id);
     const getTypes = async(urls) =>{
      try{
         const typeData = await Promise.all(
@@ -18,6 +19,7 @@ const PokemonPage = ({id}) => {
      setTypes(typeData); 
     } catch (error) {
       console.error(error);
+      
     }
     }
     useEffect(() => {
@@ -32,31 +34,47 @@ const PokemonPage = ({id}) => {
                 await getTypes(urls);
             } catch (error) {
                 console.error(error);
+                setSearch('notFound')
             } finally {
                 setIsLoading(false);
             }
         };
-    
+    if(search != " "){
         fetchPokemons();
+    }
+    
     }, [])
     
     return(
-        <div>
+        <div className="Page">
 {
-    !isLoading &&
-    (
-        <>
-    <button onClick={() => window.location.reload()}>Back</button>
-    <img src={pokeData.sprites.front_default} alt={pokeData.name} />
-    <h1>Nome: {pokeData.name}</h1>
-    <h1>Altura: {pokeData.height} m</h1>
-    <h1>Peso: {pokeData.weight} kg</h1>
+    !isLoading && 
+    
+        
+            search !=  ' ' ? (
+            search != 'notFound' ?(
+        <div className="contiener">
+    <img className="pokeImage" src={pokeData.sprites.front_default} alt={pokeData.name} />
+    <div className="tipos">
     {
         types.map((type)=>(
             <img key={type.id} src={type.sprite}/>
         ))
     }
-    </>
+    </div>
+    <div className="text">
+    <p>Nome: {pokeData.name}</p>
+    <p>Altura: {(pokeData.height)/10} m</p>
+    <p>Peso: {(pokeData.weight)/10} kg</p>
+    </div>
+    </div>
+            ):(
+                <p>Pokemon não encontrado</p>
+            )
+        ):(
+            <p>Selecione um Pokemon</p>
+        
+    
     )
 }
 </div>

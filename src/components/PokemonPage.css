@@ -1,0 +1,34 @@
+.Page{
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    color: #A6A0A0;
+}
+.pokeImage {
+    height: 400px;
+    width: 400px;
+    
+}
+ img{
+    filter: grayscale(100%);
+ }
+
+ .tipo{
+    width: 100dvw;
+   
+ }
+
+.tipos img {
+    width: 80px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.text p{
+    font-size: 16pt;
+    padding: 1px;
+    margin: 1px;
+}
