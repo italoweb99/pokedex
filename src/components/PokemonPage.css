@@ -11,7 +11,7 @@
     
 }
  img{
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
  }
 
  .tipo{
@@ -31,4 +31,19 @@
     font-size: 16pt;
     padding: 1px;
     margin: 1px;
+}
+
+@media (max-width:1600px){
+    .pokeImage{
+        width: 200px;
+        height: 200px;
+    }
+    .Page{
+        display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    color: #A6A0A0;
+        width: 350px;
+    }
 }

@@ -218,3 +218,55 @@ border-radius: 100%;
   border-radius: 100%;
   filter: blur(1.5px);
 }
+@media (max-width: 1600px) {
+  .screen{
+    height: 560px;
+    width: 901px;
+  }
+  .screenDiv{
+    display: flex;
+    flex-direction: row;
+  }.backplate{
+    width: 1066px;
+    height: 616px;
+  }
+  .rdButton{
+    height:72px;
+    width: 72px;
+    top: 165px;
+  }
+  .grill{
+    grid-gap: 8px;
+    top: 550px;
+  }
+  .grill div{
+    height: 109px;
+    width: 9.5px;
+  }
+  .detalhe{
+    left: 1268px;
+    top: -40px;
+  }
+  .btnMain{
+    height: 130px;
+    width: 130px;
+    top: 35px;
+    left:1350px;
+  }
+  .btnMainBaixo{
+    width: 130px;
+    height: 130px;
+  }
+  .btnMainCima{
+    width: 101px;
+    height: 101px;
+  }
+  .btnSide{
+    left:1440px;
+    top:184px;
+  }
+  .btnSide div{
+    height: 40px;
+    width: 40px;
+  }
+}
