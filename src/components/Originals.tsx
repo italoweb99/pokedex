@@ -23,7 +23,9 @@ const Original = ({onClose}) => {
   };
 
 
-
+const toCap=(e:string)=>{
+  return e.charAt(0).toUpperCase() + e.slice(1);
+}
 
 useEffect(() => {
     const fetchPokemons = async () => {
@@ -36,7 +38,7 @@ useEffect(() => {
         } catch (error) {
             console.error(error);
         } finally {
-            setIsLoading(false);
+          setIsLoading(false);
         }
     };
 
@@ -54,7 +56,12 @@ const handlePrevious = () => {
   return (
     <div className="conteiner">
       {isLoading ? (
+        <>
+        <div className="loading">
+        <img src="pokebola.svg"/>
         <h2>Loading...</h2> 
+        </div>
+        </>
       ) : (
         <>
         <div className="dexConteiner">
@@ -62,7 +69,7 @@ const handlePrevious = () => {
             <div key={pokemon.id} onClick={() => onClose(pokemon.name)}>
                 <img src={pokemon.sprites} alt={pokemon.name} />
                
-                <p>{`N° ${pokemon.id} ${pokemon.name}`}</p>
+                <p>{`N° ${pokemon.id} ${toCap(pokemon.name)}`}</p>
             </div>
           ))}
         </div>

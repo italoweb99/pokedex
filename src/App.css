@@ -219,25 +219,34 @@ border-radius: 100%;
   filter: blur(1.5px);
 }
 @media (max-width: 1600px) {
+body{
+  overflow: hidden;
+}
   .screen{
-    height: 560px;
-    width: 901px;
+    height: 604px;
+    width: 976px;
+    top:57px;
+    left:228px;
   }
   .screenDiv{
     display: flex;
     flex-direction: row;
   }.backplate{
-    width: 1066px;
-    height: 616px;
+    width: 1107px;
+    height: 640px;
+    top:41px;
+    left: 114px;
   }
   .rdButton{
-    height:72px;
-    width: 72px;
-    top: 165px;
+    height:58px;
+    width: 58px;
+    top: 137px;
+    left:142px;
   }
   .grill{
     grid-gap: 8px;
-    top: 550px;
+    top: 526px;
+    left:143px;
   }
   .grill div{
     height: 109px;
@@ -268,5 +277,13 @@ border-radius: 100%;
   .btnSide div{
     height: 40px;
     width: 40px;
+  }
+  .searchBar{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a6a6a6;
+
+  }
+  .searchBar input{
+    font-size: 12pt;
   }
 }

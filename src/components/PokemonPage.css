@@ -32,18 +32,61 @@
     padding: 1px;
     margin: 1px;
 }
-
+.selectPokemon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pokebola{
+    width: 250px;
+}
+.selectPokemon p{
+    margin-bottom: 40px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+.pokedexLogo{
+    margin-top: 40px;
+}
+.loading img{
+    width: 250px;
+}
+.loading h2{
+    
+    margin: 40px;
+    font-size: 30pt;
+}
 @media (max-width:1600px){
     .pokeImage{
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
     }
     .Page{
         display: flex;
-    width: 500px;
+  
     justify-content: center;
     align-items: center;
     color: #A6A0A0;
         width: 350px;
     }
+    .pokebola{
+        width: 200px;
+    }
+    .selectPokemon p{
+        margin-bottom: 30px;
+        font-size: 16pt;
+    }
+    .pokedexLogo{
+        margin-top: 30px;
+    }
+    .loading img{
+        width: 200px;
+    }
+    .loading h2{
+        
+        margin: 40px;
+        font-size: 25pt;
+    }
+    
 }
