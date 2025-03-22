@@ -1,0 +1,289 @@
+#root {
+  max-width: 1920px;
+  max-height: 1080px;
+ margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F30506;
+  text-align: center;
+  overflow: hidden;
+}
+body{
+  margin: 0;
+  overflow: hidden;
+}
+
+.screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+position: absolute;
+width: 1277px;
+height: 791px;
+left: 252px;
+top: 97px;
+
+background: #D9D9D9;
+border-radius: 10px;
+}
+
+.backplate{
+position: absolute;
+width: 1443.5px;
+height: 834px;
+left: 111px;
+top: 76px;
+filter: drop-shadow(0 0 3px #000000);
+}
+
+.detalhe{
+/* Vector 2 */
+
+position: absolute;
+width: 202px;
+height: 1024.5px;
+left: 1628px;
+top: -30px;
+filter: drop-shadow(-5px 0 2px #000000);
+
+
+}
+.screenDiv{
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBar{
+  display: flex;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-bottom: 2px solid #a6a6a6;
+  width: 60%;
+  margin-bottom: 30px;
+  color: #a6a6a6;
+}
+.searchBar input{
+  height: 30px;
+  font-size: 14pt;
+  flex-grow: 1;
+  background-color: #D9D9D9;
+  border: none;
+  color: #6A6464;
+}
+.searchBar input:focus{
+ outline: none;
+}
+.searchBar svg{
+ 
+  padding: 10px;
+}
+.searchBar svg:hover{
+  color: #6A6464;
+}
+::placeholder {
+  color: #a6a6a6;
+}
+
+.rdButton{
+  position:absolute;
+  top:195px;
+  left:147px;
+  height: 75px;
+  width: 75px;
+  background-color: #F30506;
+  border-radius: 100%;
+ /* border: 2px solid #000000;*/
+  filter: drop-shadow(0 0 2px #000000);
+}
+.grill{
+  position: absolute;
+  left:142px;
+  top:711px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto;
+ grid-gap: 10px;
+}
+.grill div{
+  background-color: #000000;
+  height: 139px;
+  width: 12px;
+  border-radius: 6px;
+}
+.btnMain{
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+left: 1710px;
+top:32px;
+width: 130px;
+height: 130px;
+
+}
+.btnMainBaixo{
+  
+  display: flex;
+justify-content: center;
+align-items: center;
+  width: 130px;
+  height: 130px;
+  background-color: #E8F7F7;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 2px #000000);
+}
+.btnMainCima{
+  width: 101px;
+  height: 101px;
+  background-color: #07F3F3;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 3px #000000);
+}
+
+.especular{
+position: absolute;
+width: 26px;
+height: 26px;
+left: 70px;
+top: 30px;
+background: #AAFBFB;
+filter: blur(1.5px);
+border-radius: 100%;
+}
+.btnSide{
+  position: absolute;
+  left:1796px;
+  top:181px;
+  display: inline-grid;
+  grid-template-rows: auto auto auto ;
+ grid-gap: 27px;
+}
+.btnSideRed{
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #F30506;
+  /*border: 2px solid #000000;*/
+  border-radius: 100%;
+  filter: drop-shadow(0 0 2px #000000);
+  overflow: hidden;
+}
+.btnSideYellow{
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #FFE90C;
+  /*border: 2px solid #000000;*/
+  filter: drop-shadow(0 0 2px #000000);
+  border-radius: 100%;
+  overflow: hidden;
+}
+.btnSideGreen{
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #5BBF26;
+ /* border: 2px solid #000000;*/
+ filter: drop-shadow(0 0 2px #000000);
+  border-radius: 100%;
+  overflow: hidden;
+}
+.btnSideRed div{
+  position: absolute;
+  left:25px;
+  top: -10px;
+  height: 36px;
+  width: 36px;
+  background-color: #FFBCBC;
+  border-radius: 100%;
+  filter: blur(1.5px);
+}
+.btnSideYellow div{
+  position: absolute;
+  left:25px;
+  top: -10px;
+  height: 36px;
+  width: 36px;
+  background-color: #FFF9BC;
+  border-radius: 100%;
+  filter: blur(1.5px);
+}
+.btnSideGreen div{
+  position: absolute;
+  left:25px;
+  top: -10px;
+  height: 36px;
+  width: 36px;
+  background-color: #CDF1BA;
+  border-radius: 100%;
+  filter: blur(1.5px);
+}
+@media (max-width: 1600px) {
+body{
+  overflow: hidden;
+}
+  .screen{
+    height: 604px;
+    width: 976px;
+    top:57px;
+    left:228px;
+  }
+  .screenDiv{
+    display: flex;
+    flex-direction: row;
+  }.backplate{
+    width: 1107px;
+    height: 640px;
+    top:41px;
+    left: 114px;
+  }
+  .rdButton{
+    height:58px;
+    width: 58px;
+    top: 137px;
+    left:142px;
+  }
+  .grill{
+    grid-gap: 8px;
+    top: 526px;
+    left:143px;
+  }
+  .grill div{
+    height: 109px;
+    width: 9.5px;
+  }
+  .detalhe{
+    left: 1268px;
+    top: -40px;
+  }
+  .btnMain{
+    height: 130px;
+    width: 130px;
+    top: 35px;
+    left:1350px;
+  }
+  .btnMainBaixo{
+    width: 130px;
+    height: 130px;
+  }
+  .btnMainCima{
+    width: 101px;
+    height: 101px;
+  }
+  .btnSide{
+    left:1440px;
+    top:184px;
+  }
+  .btnSide div{
+    height: 40px;
+    width: 40px;
+  }
+  .searchBar{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a6a6a6;
+
+  }
+  .searchBar input{
+    font-size: 12pt;
+  }
+}
