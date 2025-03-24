@@ -83,7 +83,7 @@ const PokemonPage = ({ id, onClose}) => {
                     <div className="selectPokemon">
                         <p>Selecione um Pokémon</p>
                         <img className="pokebola" src="pokebola.svg" alt="Pokebola" />
-                        <img className="pokedexLogo" src="pokedex.svg" alt="Pokedex Logo" />
+                        <img className="pokedexLogo" src="Pokédex.svg" alt="Pokedex Logo" />
                     </div>
                 )
             
