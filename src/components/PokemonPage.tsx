@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import './PokemonPage.css';
+import { FaPlus } from "react-icons/fa";
 
-const PokemonPage = ({ id }) => {
+const PokemonPage = ({ id, onClose}) => {
     const [pokeData, setPokeData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [types, setTypes] = useState<{ tipo: string; id: number; sprite: string }[]>([]);
+    const [types, setTypes] = useState<{ tipo: string; id: number; sprite: string,}[]>([]);
     const [search, setSearch] = useState(id);
 
     const toCap = (e: string) => {
@@ -29,7 +30,7 @@ const PokemonPage = ({ id }) => {
     useEffect(() => {
         const fetchPokemons = async () => {
             setIsLoading(true);
-            console.log('sdsdsd');
+         
             try {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
                 const json = await response.json();
@@ -71,6 +72,7 @@ const PokemonPage = ({ id }) => {
                                 <p>Nome: {toCap(pokeData.name)}</p>
                                 <p>Altura: {(pokeData.height) / 10} m</p>
                                 <p>Peso: {(pokeData.weight) / 10} kg</p>
+                                <div onClick={()=>onClose(id)}><FaPlus/></div>
                             </div>
                         </div>
                     ) : (

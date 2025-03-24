@@ -61,6 +61,7 @@ filter: drop-shadow(-5px 0 2px #000000);
   border-bottom: 2px solid #a6a6a6;
   width: 60%;
   margin-bottom: 30px;
+  margin-top: 50px;
   color: #a6a6a6;
 }
 .searchBar input{
@@ -281,6 +282,7 @@ body{
   .searchBar{
     margin-bottom: 20px;
     border-bottom: 1px solid #a6a6a6;
+    margin-top: 20px;
 
   }
   .searchBar input{
