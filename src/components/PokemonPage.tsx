@@ -56,7 +56,7 @@ const PokemonPage = ({ id, onClose}) => {
                 search !== ' ' ? (
                     isLoading ? (
                         <div className="loading">
-                        <img src="pokebola.svg"/>
+                        <img src="/pokebola.svg"/>
                         <h2>Loading...</h2> 
                         </div>
                     ) : (
@@ -82,8 +82,8 @@ const PokemonPage = ({ id, onClose}) => {
                 ) : (
                     <div className="selectPokemon">
                         <p>Selecione um Pokémon</p>
-                        <img className="pokebola" src="pokebola.svg" alt="Pokebola" />
-                        <img className="pokedexLogo" src="Pokédex.svg" alt="Pokedex Logo" />
+                        <img className="pokebola" src="/pokebola.svg" alt="Pokebola" />
+                        <img className="pokedexLogo" src="/Pokédex.svg" alt="Pokedex Logo" />
                     </div>
                 )
             
