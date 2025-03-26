@@ -5,8 +5,10 @@ import './App.css'
 import Original from './components/Originals';
 import PokemonPage from './components/PokemonPage';
 import { FaSistrix } from 'react-icons/fa';
+import FullPage from './components/FullPage';
 function App() {
  // const [showOriginal, setShowOriginal] = useState(true);
+ const[isShowMain,setShowMain] = useState(true);
   const [id, setId] = useState(" ");
   const [search,setSearch] = useState('');
   const handleClose = (e) =>{
@@ -21,6 +23,13 @@ function App() {
     setId(search);
     //console.log(id);
     //setShowOriginal(false);
+  }
+  const handleClosePage = (e) =>{
+    setId(e);
+    setShowMain(false);
+  }
+  const handleClick = (e) =>{
+    setId(e)
   }
   return(
     <>
@@ -59,10 +68,19 @@ function App() {
       <input type='text' placeholder='Pesquisar' value={search} onChange={handleChange} />
      <FaSistrix onClick = {sumit} size={18}/>
     </div>
+    {
+    isShowMain ? (
+      <>
     <div className='screenDiv'>
-    <PokemonPage key={id} id={id}/>
+    <PokemonPage key={id} id={id} onClose = {handleClosePage}/>
    <Original onClose={handleClose}/>
    </div>
+   
+   </>
+    ):(
+      <FullPage key = {id} id = {id} onClick={handleClick}/>
+    )
+   }
     </div>
     </>
   )

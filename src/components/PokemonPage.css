@@ -10,10 +10,7 @@
     width: 400px;
     
 }
- img{
-    /*filter: grayscale(100%);*/
- }
-
+ 
  .tipo{
     width: 100dvw;
    
@@ -57,6 +54,26 @@
     margin: 40px;
     font-size: 30pt;
 }
+.text{
+    justify-content: center;
+    align-items: center;
+}
+.text div{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   height: 50px;
+   width: 50px;
+   border-radius: 100%;
+   background-color: #A6A0A0;
+   font-size: 18pt;
+   color: #D9D9D9;
+}
+.text div:hover{
+    background-color: #6A6464;
+}
 @media (max-width:1600px){
     .pokeImage{
         width: 300px;
@@ -87,6 +104,12 @@
         
         margin: 40px;
         font-size: 25pt;
+    }
+    .text div{
+        margin-top: 10px;
+   height: 30px;
+   width: 30px;
+   font-size: 12pt;
     }
     
 }
