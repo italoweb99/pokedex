@@ -46,11 +46,11 @@ useEffect(() => {
 }, [offset]);
 
 const handleNext = () => {
-    setOffset((prevOffset) => prevOffset + 10);
+    setOffset((prevOffset) => prevOffset + 20);
 };
 
 const handlePrevious = () => {
-    setOffset((prevOffset) => Math.max(prevOffset - 10, 0));
+    setOffset((prevOffset) => Math.max(prevOffset - 20, 0));
 };
 
   return (
