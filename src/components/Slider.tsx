@@ -1,5 +1,5 @@
 const Slider = ({value = 0, backgroundColor = 'darkblue', foregroundColor = 'lightblue'}) =>{
-    console.log(value)
+    //console.log(value)
 return(
     <div style={{
         backgroundColor: backgroundColor,
