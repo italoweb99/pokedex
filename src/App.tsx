@@ -17,7 +17,7 @@ function App() {
   }
   const handleChange = (e) =>{
     setSearch(e.target.value)
-    console.log(search);
+   // console.log(search);
   }
   const sumit = () =>{
     setId(search);
@@ -39,7 +39,7 @@ function App() {
 
 <svg width="214" height="1023" viewBox="0 0 214 1023" fill="none" xmlns="http://www.w3.org/2000/svg" className='detalhe'>
 <g filter="url(#filter0_d_1_9)">
-<path d="M6 0V263.5C6 373 208 449 208 521V1024.5" stroke="#F30506" stroke-width="2"/>
+<path d="M6 0V263.5C6 373 208 449 208 521V1024.5" stroke="#F30506" strokeWidth="2"/>
 </g>
 
 </svg>

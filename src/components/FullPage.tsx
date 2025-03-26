@@ -81,6 +81,7 @@ const FullPage = ({id, onClick}) =>{
             }
             catch(error){
                 console.log('Erro getTree', error);
+                
             }
                 
     }
@@ -114,15 +115,16 @@ const FullPage = ({id, onClick}) =>{
            }
            catch(error){
             console.log('Erro getpokedata', error);
+           // console.log('ssss');
         }
         }
         fetchPokeData();
     },[id])
-    console.log(pokeData);
+    //console.log(pokeData);
     return(
     <div className="conteiner2">
         {
-          !isLoading && (
+          !isLoading ? (
             <>
            <FaArrowLeft className='seta' onClick={()=>window.location.reload()} size={24}/>
             <div className="images">
@@ -141,10 +143,10 @@ const FullPage = ({id, onClick}) =>{
             <h1>Estatísticas</h1>
            {
             pokeData?.stats.map((stat) =>(
-            <>
+            <div key={stat.stat.name}>
                <p>{stat.stat.name}</p>
                <Slider value={stat.base_stat}/>
-            </>
+            </div>
             ) )
            }
             </div>
@@ -160,6 +162,13 @@ const FullPage = ({id, onClick}) =>{
                 ))
             }
             </div>
+            </div>
+            </>
+          ):(
+            <>
+            <div className="loading">
+            <img src="pokebola.svg"/>
+            <h2>Loading...</h2> 
             </div>
             </>
           )

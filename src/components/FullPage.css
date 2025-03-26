@@ -107,7 +107,18 @@ align-items: center;
   ::-webkit-scrollbar-thumb:hover {
     background: #6A6464;
   }
-
+  .loading{
+    color: #a6a6a6;
+    padding-top: 106px;
+}
+.loading img{
+    width: 200px;
+}
+.loading h2{
+    
+    margin-top: 40px;
+    font-size: 25pt;
+}
   @media (max-width: 1600px) {
     .imgs{
         font-size: 32pt;
