@@ -27,7 +27,7 @@ const PokemonPage = ({ id, onClose}:PokePagProps) => {
                 urls.map(async (url) => {
                     const res = await fetch(url);
                     const json = await res.json();
-                    return { tipo: json.name, id: json.id, sprite: json.sprites['generation-iii']?.emerald?.name_icon };
+                    return { tipo: json.name, id: json.id, sprite: json.sprites['generation-vi']?.['x-y']?.name_icon };
                 })
             );
             setTypes(typeData);
@@ -65,7 +65,7 @@ const PokemonPage = ({ id, onClose}:PokePagProps) => {
                 search !== ' ' ? (
                     isLoading ? (
                         <div className="loading">
-                        <img src="/pokebola.svg"/>
+                        <img src="pokebola.svg"/>
                         <h2>Loading...</h2> 
                         </div>
                     ) : (
@@ -91,8 +91,8 @@ const PokemonPage = ({ id, onClose}:PokePagProps) => {
                 ) : (
                     <div className="selectPokemon">
                         <p>Selecione um Pokémon</p>
-                        <img className="pokebola" src="/pokebola.svg" alt="Pokebola" />
-                        <img className="pokedexLogo" src="/Pokédex.svg" alt="Pokedex Logo" />
+                        <img className="pokebola" src="pokebola.svg" alt="Pokebola" />
+                        <img className="pokedexLogo" src="Pokédex.svg" alt="Pokedex Logo" />
                     </div>
                 )
             
