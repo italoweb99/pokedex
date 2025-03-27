@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,11 +11,11 @@ function App() {
  const[isShowMain,setShowMain] = useState(true);
   const [id, setId] = useState(" ");
   const [search,setSearch] = useState('');
-  const handleClose = (e) =>{
+  const handleClose = (e: any) =>{
    // setShowOriginal(false);
     setId(e)
   }
-  const handleChange = (e) =>{
+  const handleChange = (e: any) =>{
     setSearch(e.target.value)
    // console.log(search);
   }
@@ -24,11 +24,11 @@ function App() {
     //console.log(id);
     //setShowOriginal(false);
   }
-  const handleClosePage = (e) =>{
+  const handleClosePage = (e: any) =>{
     setId(e);
     setShowMain(false);
   }
-  const handleClick = (e) =>{
+  const handleClick = (e: any) =>{
     setId(e)
   }
   return(

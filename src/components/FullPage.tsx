@@ -2,11 +2,16 @@ import { useEffect, useState } from "react"
 import './FullPage.css'
 import Slider from "./Slider";
 import { FaArrowLeft } from "react-icons/fa";
-const FullPage = ({id, onClick}) =>{
+
+interface FullPageProps{
+    id: any;
+    onClick: (name:string) =>void;
+}
+const FullPage = ({id, onClick}:FullPageProps) =>{
     const [pokeData,setPokeData] = useState<{nome: string; sprite: string; stats: any[]; types: any[]; evoChain: any[],}>()
     const [isLoading,setIsLoading] = useState(true);
     
-    const getTypes = async (urls) => {
+    const getTypes = async (urls: string[]) => {
         try {
             const typeData = await Promise.all(
                 urls.map(async (url) => {
@@ -21,7 +26,7 @@ const FullPage = ({id, onClick}) =>{
         }
     };
 
-    const fetchImgs = async(url) =>{
+    const fetchImgs = async(url: string) =>{
         try{
             const res2 = await fetch(url)
             const json2 = await res2.json();
@@ -31,7 +36,7 @@ const FullPage = ({id, onClick}) =>{
         console.log("erro",error);
        }
     }
-    const getImgs = async(urls) =>{
+    const getImgs = async(urls: string[]) =>{
         const imgs = await Promise.all(
             urls.map(async (url)=>{
                try{
@@ -47,7 +52,7 @@ const FullPage = ({id, onClick}) =>{
         )
         return imgs;
     }
-    const parseEvolutionChain = (chain, list: {name: string, url: string}[] = []) => {
+    const parseEvolutionChain = (chain: any, list: {name: string, url: string}[] = []) => {
       
         if (!chain) return list; // Caso base: se não houver cadeia, só retorna a lista
         list.push({
@@ -57,17 +62,17 @@ const FullPage = ({id, onClick}) =>{
         // Se houver evoluções, fazemos uma chamada recursiva
         if (chain.evolves_to.length > 0) {
           // Se tiver mais de uma evolução, pode ser necessário iterar, aqui pegamos a primeira
-          chain.evolves_to.forEach(evo => {
+          chain.evolves_to.forEach((evo: any) => {
             parseEvolutionChain(evo, list);
           });
         }
         return list;
       };
     
-    const getEvoTree = async (url) =>{
+    const getEvoTree = async (url: string) =>{
      
             try{
-                let aux = [];
+                let aux: any[] = [];
                 const res = await fetch(url);
                 const json =await res.json();
                // console.log(json);
@@ -75,7 +80,7 @@ const FullPage = ({id, onClick}) =>{
               const urls = list.map((pokemon: {url: string})=> pokemon.url);
               const img = await getImgs(urls)
               list.map((pokemon,index)=>{
-                aux.push({name: pokemon.name, img: img[index].url})
+                aux.push({name: pokemon.name, img: img[index]?.url})
               })
               return aux;
             }
@@ -85,7 +90,7 @@ const FullPage = ({id, onClick}) =>{
             }
                 
     }
-    const  getSpecies = async (url) =>{
+    const  getSpecies = async (url: string) =>{
         try{
             const res = await fetch (url);
             
@@ -97,8 +102,8 @@ const FullPage = ({id, onClick}) =>{
             console.log('Erro getSpecies', error);
         }
     }
-    const toCap=(e:string)=>{
-        return e.charAt(0).toUpperCase() + e.slice(1);
+    const toCap=(e: string|undefined) =>{
+        return e ? e.charAt(0).toUpperCase() + e.slice(1) : ""
       }
       
     useEffect(()=>{
@@ -109,6 +114,7 @@ const FullPage = ({id, onClick}) =>{
             const evoChain = await getSpecies (json.species.url);
             const urls = json.types.map((pokemon: { type: string }) => pokemon.type).map((type: { url: string }) => type.url);
              const types =   await getTypes(urls);
+             if(types && evoChain)
             setPokeData ({nome: json.name, sprite: json.sprites.front_default, stats: json.stats, types: types, evoChain: evoChain});
             setIsLoading(false);
            
@@ -155,7 +161,7 @@ const FullPage = ({id, onClick}) =>{
             <div className="evoChain"> 
             {
                 pokeData?.evoChain.map((url)=>(
-                    <div onClick={()=>onClick(url.name)} key={url.name}>
+                    <div onClick={()=>onClick(url!.name)} key={url.name}>
                     <img src={url.img}/>
                     <p>{toCap(url.name)}</p>
                     </div>

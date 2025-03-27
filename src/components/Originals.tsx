@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./Originals.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-const Original = ({onClose}) => {
+interface OriginalProps{
+  onClose: (name: string) =>void;
+}
+const Original = ({onClose}:OriginalProps) => {
   const [pokemons, setPokemons] = useState<{ id: number; name: string; sprites: string}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   //const [hasLoaded, setHasLoaded] = useState(false);
