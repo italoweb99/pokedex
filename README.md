@@ -7,15 +7,27 @@ e exibir informações sobre os Pokémons disponíveis.
 
 ## Instalação
 
+Acesse o Site [Pokédex](https://italoweb99.github.io/pokedex/)
+
+### Ou
+
 Clone e instale as dependências
 ```
 git clone https://github.com/italoweb99/pokedex.git
 cd pokedex
 npm install
 ```
-### Ou
+Altere o arvivo vite.config.ts
 
-Acesse o Site [Pokédex](https://www.google.com.br)
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+```
 
 ## Uso
 
